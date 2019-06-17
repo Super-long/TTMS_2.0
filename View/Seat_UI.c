@@ -65,6 +65,8 @@ void Seat_UI_MgtEntry(int roomID) {
 	//printf("%d %d %d %d\n",list->next->data.id,list->next->data.column,list->next->data.column,list->next->data.roomID);
 	//Seat_Srv_SortSeatList(list);
 	//链表已排好序
+	sort1(list);
+	sort2(list);
 	int row=buf->rowsCount;
 	int col=buf->colsCount;
 	int i, id;
@@ -269,6 +271,8 @@ int Seat_UI_Add(seat_list_t list, int roomID, int row, int column) {  //���
 			//printf("插入排序上面:\n");
 			//Seat_Srv_AddToSoftedList(list,temp);
 			List_AddHead(list,tempdd);
+			sort1(list);
+			sort2(list);
 			printf("添加座位成功！\n");
 			return 1;
 		}else

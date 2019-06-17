@@ -216,3 +216,63 @@ int Seat_Srv_FetchByRoom(seat_list_t list)
        }
        return flag;
 }
+
+void sort1(seat_list_t head)
+{
+    seat_list_t tmp = head->next,p = NULL,q = NULL;
+ 
+    //将链表置空
+    head->next = head;
+    head->prev = head;
+ 
+    while(tmp!=head){
+        //保存原链表中tmp的下一个节点
+        q = tmp->next;
+        
+        //找到tmp插入的位置
+        for(p=head->prev;p!=head && (p->data.row>=tmp->data.row);p=p->prev);
+        tmp->prev = p;
+        tmp->next = p->next;
+        p->next->prev = tmp;
+        p->next = tmp;
+ 
+        //将tmp指向要插入的下一个节点
+        tmp = q;
+    }
+}
+
+void sort2(seat_list_t head)
+{
+    seat_list_t tmp = head->next,p = NULL,q = NULL;
+ 
+    //将链表置空
+    head->next = head;
+    head->prev = head;
+ 
+    while(tmp!=head){
+        //保存原链表中tmp的下一个节点
+        q = tmp->next;
+        
+        //找到tmp插入的位置
+        //for(p=head->prev;p!=head && (p->data.row>=tmp->data.row);p=p->prev);
+        p=head->prev;
+        while(1)
+        {
+               if(p!=head && p->data.row==tmp->data.row)
+               {
+                      if(p->data.column>=tmp->data.column)
+                      p=p->prev;
+                      else
+                      break;
+               }else 
+               break;
+        }
+        tmp->prev = p;
+        tmp->next = p->next;
+        p->next->prev = tmp;
+        p->next = tmp;
+ 
+        //将tmp指向要插入的下一个节点
+        tmp = q;
+    }
+}
