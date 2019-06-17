@@ -223,8 +223,11 @@ void Seat_UI_MgtEntry(int roomID) {
 				}
 				putchar('\n');
 			} //用于显示座位情况列表
-			printf("按任意键退出!\n");
-			scanf("%s",ch);
+/* 			printf("按任意键退出!\n");
+			scanf("%s",ch); */
+			printf("按回车键退出！");
+			getchar();
+			getchar();
 			break;}
 		case 'p':
 		case 'P':

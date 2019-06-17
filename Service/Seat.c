@@ -61,7 +61,7 @@ int Seat_Srv_RoomInit(seat_list_t list, int roomID, int rowsCount,int colsCount)
 }
 
 
-void Seat_Srv_SortSeatList(seat_list_t list) {
+ void Seat_Srv_SortSeatList(seat_list_t list) {
        
        if(List_IsEmpty(list))
        {
@@ -94,7 +94,7 @@ void Seat_Srv_SortSeatList(seat_list_t list) {
 }
 
 
-void Seat_Srv_AddToSoftedList(seat_list_t list, seat_node_t *node) {
+ void Seat_Srv_AddToSoftedList(seat_list_t list, seat_node_t *node) {
        seat_list_t temp=(seat_list_t)malloc(sizeof(seat_node_t));
        temp=node;
        temp->next=NULL;

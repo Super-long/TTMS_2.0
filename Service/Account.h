@@ -45,5 +45,8 @@ int Account_Srv_Listnumber(account_list_t list);
 
 //在已获取链表上查找用户 无则返回NULL
 account_node_t * Account_Srv_FindByUsrname(account_list_t list,char usrname[]);
+//在获取销售额时可以使用这个函数代替 因为刚开始为了载入ID一定要载入系统用户文件
+
+
 
 #endif ACCOUNT_H_

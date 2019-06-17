@@ -8,6 +8,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<unistd.h> //access函数
+
 account_t gl_CurUser;
 
 static const char ACCOUNT_DATA_FILE[]= "account.dat" ;
